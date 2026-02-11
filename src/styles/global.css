@@ -1,0 +1,90 @@
+@import './variables.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #111;
+    /* Outer bg for desktop */
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--time-transition), color var(--time-transition);
+}
+
+#root {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: background-color var(--time-transition);
+}
+
+/* Utilities */
+.container {
+    padding: var(--spacing-md);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-sm {
+    gap: var(--spacing-sm);
+}
+
+.gap-md {
+    gap: var(--spacing-md);
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.btn-reset {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
+input,
+select,
+button {
+    font-family: inherit;
+    transition: background-color var(--time-transition), border-color var(--time-transition), color var(--time-transition);
+}
+
+label {
+    color: var(--color-text-secondary);
+}
