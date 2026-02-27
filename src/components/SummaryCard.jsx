@@ -9,26 +9,34 @@ export default function SummaryCard({ title, income, expense, currency }) {
             background: 'linear-gradient(135deg, #0095f6 0%, #005c9e 100%)',
             color: '#fff',
             borderRadius: 'var(--radius-lg)',
-            padding: '20px',
-            marginBottom: '20px',
+            padding: '16px',
             boxShadow: 'var(--shadow-md)',
-            flexShrink: 0,
             width: '100%',
-            scrollSnapAlign: 'start'
+            overflow: 'hidden'
         }}>
             <h3 style={{ fontSize: '0.9rem', opacity: 0.9, marginBottom: '8px' }}>{title}</h3>
-            <div style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '16px' }}>
+            <div style={{
+                fontSize: 'clamp(1.2rem, 5vw, 1.8rem)',
+                fontWeight: 700,
+                marginBottom: '16px',
+                wordBreak: 'break-word',
+                lineHeight: 1.2
+            }}>
                 {formatCurrency(balance, currency)}
             </div>
 
-            <div className="flex justify-between">
-                <div>
+            <div className="flex justify-between" style={{ gap: '8px' }}>
+                <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>Ingresos</div>
-                    <div style={{ fontWeight: 600 }}>{formatCurrency(income, currency)}</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.9rem', wordBreak: 'break-word', lineHeight: 1.2 }}>
+                        {formatCurrency(income, currency)}
+                    </div>
                 </div>
-                <div style={{ textAlign: 'right' }}>
+                <div style={{ flex: 1, minWidth: 0, textAlign: 'right' }}>
                     <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>Gastos</div>
-                    <div style={{ fontWeight: 600 }}>{formatCurrency(expense, currency)}</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.9rem', wordBreak: 'break-word', lineHeight: 1.2 }}>
+                        {formatCurrency(expense, currency)}
+                    </div>
                 </div>
             </div>
         </div>
