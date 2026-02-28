@@ -84,7 +84,7 @@ export default function FeedPage() {
 
 
             {/* Summary Cards Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: '10px', marginBottom: '24px' }}>
                 <SummaryCard
                     title="Hoy"
                     income={stats.daily.income}

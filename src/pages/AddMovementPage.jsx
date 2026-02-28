@@ -25,7 +25,7 @@ export default function AddMovementPage() {
         amount: '',
         description: '',
         category: 'Varios',
-        date: new Date().toISOString().split('T')[0],
+        date: new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split('T')[0],
         currency: 'ARS',
         paymentMethod: 'Efectivo'
     });
